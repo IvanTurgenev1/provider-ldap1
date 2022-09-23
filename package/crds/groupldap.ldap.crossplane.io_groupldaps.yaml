@@ -5,18 +5,18 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: mytypes.sample.template.crossplane.io
+  name: groupldaps.groupldap.ldap.crossplane.io
 spec:
-  group: sample.template.crossplane.io
+  group: groupldap.ldap.crossplane.io
   names:
     categories:
     - crossplane
     - managed
-    - template
-    kind: MyType
-    listKind: MyTypeList
-    plural: mytypes
-    singular: mytype
+    - ldap
+    kind: Groupldap
+    listKind: GroupldapList
+    plural: groupldaps
+    singular: groupldap
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -35,7 +35,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: A MyType is an example API type.
+        description: A Groupldap is an example API type.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,7 +50,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: A MyTypeSpec defines the desired state of a MyType.
+            description: A GroupldapSpec defines the desired state of a Groupldap.
             properties:
               deletionPolicy:
                 default: Delete
@@ -62,7 +62,8 @@ spec:
                 - Delete
                 type: string
               forProvider:
-                description: MyTypeParameters are the configurable fields of a MyType.
+                description: GroupldapParameters are the configurable fields of a
+                  Groupldap.
                 properties:
                   configurableField:
                     type: string
@@ -241,10 +242,10 @@ spec:
             - forProvider
             type: object
           status:
-            description: A MyTypeStatus represents the observed state of a MyType.
+            description: A GroupldapStatus represents the observed state of a Groupldap.
             properties:
               atProvider:
-                description: MyTypeObservation are the observable fields of a MyType.
+                description: GroupldapObservation are the observable fields of a Groupldap.
                 properties:
                   observableField:
                     type: string
